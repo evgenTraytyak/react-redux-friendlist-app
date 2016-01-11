@@ -1,9 +1,20 @@
 import React, { Component } from 'react';
+import { combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import DevTools from '../utils/devTools';
+import FriendListApp from './FriendListApp';
+
 
 export default class App extends Component {
-  render() {
-    return (
-      <h1>Hello, world.</h1>
-    );
-  }
+    render() {
+        const { store } = this.props;
+        return (
+            <Provider store={store}>
+                <div>
+                    <FriendListApp />
+                    <DevTools />
+                </div>
+            </Provider>
+        );
+    }
 }
