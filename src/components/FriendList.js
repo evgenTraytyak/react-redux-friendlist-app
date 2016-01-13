@@ -3,6 +3,11 @@ import map from 'lodash/collection/map';
 import FriendListItem from './FriendListItem';
 
 export default class FriendList extends Component {
+    static propTypes = {
+        friends: PropTypes.object.isRequired,
+        actions: PropTypes.object.isRequired
+    }
+
     render() {
         return (
             <ul>
